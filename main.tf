@@ -28,6 +28,9 @@ resource "google_compute_instance" "vm" {
     machine_type = var.machine_type
     zone = var.zone
 
+    allow_stopping_for_update = true
+
+
     # Tag for firewall rules 
     tags = ["intern-assignment"]
 

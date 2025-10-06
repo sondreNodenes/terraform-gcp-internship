@@ -22,3 +22,19 @@ variable "student_name" {
   type = string 
   default = "sondre_nodenes"
 }
+
+# VM instance config
+variable "instance_name" {
+  description = "Name of the VM instance"
+  type = string 
+  default = "px-intern-vm"
+}
+
+variable "machine_type" {
+  description = "Machine type for the VM"
+  type = string
+  default = "e2-micro" #Type as assignment says
+}
+
+
+

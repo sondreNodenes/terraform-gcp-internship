@@ -51,3 +51,32 @@ resource "google_compute_instance" "vm" {
     }
 }
 
+#Firewall rule to alow HTTP traffic from the whole internet (source_ranges) to intern-assignments
+resource "google_compute_firewall" "allow_htp" {
+  name = "allow-http-intern-assignment"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports = ["80"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags = ["intern-assignment"]
+}
+
+#Firewall rule to allow SSH from allowed groups/users
+resource "google_compute_firewall" "allow_iap_ssh" {
+  name = "allow-iap-ssh-intern-assignment"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports = ["22"]
+
+  }
+
+  source_ranges = ["35.235.240.0/20"]
+  target_tags = ["intern-assignment"]
+}
+

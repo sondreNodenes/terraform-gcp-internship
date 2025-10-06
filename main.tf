@@ -82,3 +82,9 @@ resource "google_compute_firewall" "allow_iap_ssh" {
   target_tags = ["intern-assignment"]
 }
 
+resource "google_project_iam_member" "iap_tunnel_user" {
+  project = var.project_id
+  role = "roles/iap.tunnelResourceAccessor" #Assign member this role
+  member = "user:sondrenf@gmail.com"
+}
+

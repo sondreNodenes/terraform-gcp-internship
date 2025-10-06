@@ -35,6 +35,8 @@ resource "google_compute_instance" "vm" {
         student = var.student_name
     }
 
+    metadata_startup_script = file("${path.module}/startup-script.sh")
+
     boot_disk{
         initialize_params{
             image = data.google_compute_image.debian.self_link

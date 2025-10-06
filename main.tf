@@ -37,6 +37,11 @@ resource "google_compute_instance" "vm" {
 
     metadata_startup_script = file("${path.module}/startup-script.sh")
 
+    #service account for VM
+    service_account {
+      scopes = ["cloud-platform"]
+    }
+
     boot_disk{
         initialize_params{
             image = data.google_compute_image.debian.self_link

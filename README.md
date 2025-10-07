@@ -12,5 +12,24 @@ The assignment demonstrates:
 - Firewall configuration following security best practices
 - Automated web server setup using startup scripts
 
+## Connecting via SSH
+
+SSH access is configured to work exclusively through Identity-Aware Proxy (IAP).
+
+**Requirements:**
+- IAP API must be enabled in the GCP project
+- User must have IAM role `roles/iap.tunnelResourceAccessor` (managed by project administrators)
+- Firewall allows SSH only from IAP IP range (35.235.240.0/20)
+
+
+### Connect to VM
+```bash
+gcloud compute ssh px-intern-vm \
+  --zone=europe-north1-a \
+  --tunnel-through-iap \
+  --project=optimal-shard-332612
+
+
+
 ## Project Structure
 - In progress

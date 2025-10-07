@@ -99,3 +99,12 @@ resource "google_project_iam_member" "iap_tunnel_user" {
 
 */
 
+# DNS A record pointing to VM's external IP
+resource "google_dns_record_set" "vm_dns" {
+  name         = "vm.sandbox4.vcops.tech."
+  type         = "A"
+  ttl          = 300
+  managed_zone = "sandbox4-vcops-tech"
+  
+  rrdatas = [google_compute_instance.vm.network_interface[0].access_config[0].nat_ip]
+}

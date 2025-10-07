@@ -40,9 +40,9 @@ resource "google_compute_instance" "vm" {
 
   metadata_startup_script = file("${path.module}/startup-script.sh")
 
-  #service account for VM
+  #service account for VM with limited scopes for security
   service_account {
-    scopes = ["cloud-platform"]
+    scopes = ["logging-write", "monitoring-write"]
   }
 
   boot_disk {

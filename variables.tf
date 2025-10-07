@@ -18,7 +18,7 @@ variable "zone" {
 }
 
 variable "student_name" {
-  description = "Student name for labes"
+  description = "Student name for labels"
   type        = string
   default     = "sondre_nodenes"
 }

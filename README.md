@@ -14,7 +14,7 @@ The assignment demonstrates:
 
 ## Connecting via SSH
 
-SSH access is configured to work exclusively through Identity-Aware Proxy (IAP).
+SSH access is configured to work **exclusively through Identity-Aware Proxy (IAP)**.
 
 
 ## Project Structure
@@ -33,6 +33,17 @@ SSH access is configured to work exclusively through Identity-Aware Proxy (IAP).
 - User must have IAM role `roles/iap.tunnelResourceAccessor` (managed by project administrators)
 - Firewall allows SSH only from IAP IP range (35.235.240.0/20)
 
+## Deploy:
+```bash 
+terraform init
+terraform plan
+terraform apply
+```
+
+## Access info
+```bash
+terraform output
+```
 
 ### Connect to VM
 ```bash

@@ -16,7 +16,20 @@ The assignment demonstrates:
 
 SSH access is configured to work exclusively through Identity-Aware Proxy (IAP).
 
-**Requirements:**
+
+## Project Structure
+```bash
+.
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+├── startup-script.sh
+└── README.md
+
+```
+
+## Requirements
 - IAP API must be enabled in the GCP project
 - User must have IAM role `roles/iap.tunnelResourceAccessor` (managed by project administrators)
 - Firewall allows SSH only from IAP IP range (35.235.240.0/20)

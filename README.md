@@ -36,11 +36,7 @@ This repository contains an **IaC solution** for deploying a secure web server o
 - IAP API must be enabled in the GCP project
 - User must have IAM role `roles/iap.tunnelResourceAccessor` (managed by project administrators)
 - Create a `terraform.tfvars` file with your GCP project ID:
-  ```hcl
-  project_id = "your-gcp-project-id"
-  ```
 
-**Note on IAM binding:** The repo includes commented-out Terraform code in main.tf for automatic assigning the IAP tunnel access role. This code is commented out because it requires project IAM admin privileges. In this deployment, IAP access was granted manually by the project administrator.
 
 ## Deploy
 ```bash 

@@ -6,15 +6,13 @@
 
 This repository contains an Infrastructure as Code (IaC) solution for deploying a secure web server on Google Cloud Platform using Terraform.
 
-The assignment demonstrates:
-- VM instance deployment on GCP Compute Engine
-- Secure SSH access via Identity-Aware Proxy (IAP)
-- Firewall configuration following security best practices
-- Automated web server setup using startup scripts
-
-## Connecting via SSH
-
-SSH access is configured to work **exclusively through Identity-Aware Proxy (IAP)**.
+**Implemented**:
+- VM instance (e2-micro, Debian 12)
+- SSH access via Identity-Aware Proxy (IAP)
+- HTTP/HTTPS firewall rules
+- Automated Nginx web server
+- DNS A record
+- Let's Encrypt TLS certificate
 
 
 ## Project Structure

@@ -25,4 +25,4 @@ systemctl enable nginx
 #Sleep 10 seconds so that nginx is fully ready
 sleep 10 
 
-certbot --nginx -d sondrenodenes.sandbox4x.vcops.tech --non-interactive --agree-tos --email sondrenf@gmail.com --redirect
+certbot --nginx -d vm.sandbox4.vcops.tech --non-interactive --agree-tos --email sondrenf@gmail.com --redirect

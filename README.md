@@ -3,8 +3,7 @@
 **Author:** Sondre Nodenes-Fimland
 
 ## Overview
-
-This repository contains an Infrastructure as Code (IaC) solution for deploying a secure web server on Google Cloud Platform using Terraform.
+This repository contains an **IaC solution** for deploying a secure web server on **Google Cloud Platform (GCP)** using **Terraform**.
 
 
 

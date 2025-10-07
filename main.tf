@@ -51,7 +51,7 @@ resource "google_compute_instance" "vm" {
     }
   }
 
-  #Network interfae with external IP
+  #Network interface with external IP
   network_interface {
     network = "default"
 
@@ -61,8 +61,8 @@ resource "google_compute_instance" "vm" {
   }
 }
 
-#Firewall rule to alow HTTP traffic from the whole internet (source_ranges) to intern-assignments
-resource "google_compute_firewall" "allow_htp" {
+#Firewall rule to allow HTTP traffic from the whole internet (source_ranges) to intern-assignments
+resource "google_compute_firewall" "allow_http" {
   name    = "allow-http-intern-assignment"
   network = "default"
 

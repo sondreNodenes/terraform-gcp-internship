@@ -6,6 +6,8 @@
 
 This repository contains an Infrastructure as Code (IaC) solution for deploying a secure web server on Google Cloud Platform using Terraform.
 
+
+
 **Implemented**:
 - VM instance (e2-micro, Debian 12)
 - SSH access via Identity-Aware Proxy (IAP)
@@ -14,6 +16,9 @@ This repository contains an Infrastructure as Code (IaC) solution for deploying 
 - DNS A record
 - Let's Encrypt TLS certificate
 
+## Web Acccess
+- HTTPS: https://vm.sandbox4.vcops.tech
+- DNS: http://vm.sandbox4.vcops.tech
 
 ## Project Structure
 ```bash
@@ -27,9 +32,10 @@ This repository contains an Infrastructure as Code (IaC) solution for deploying 
 ```
 
 ## Requirements
+- Google Cloud SDK authenticated
+- Terraform >= 1.0
 - IAP API must be enabled in the GCP project
 - User must have IAM role `roles/iap.tunnelResourceAccessor` (managed by project administrators)
-- Firewall allows SSH only from IAP IP range (35.235.240.0/20)
 
 ## Deploy:
 ```bash 
@@ -43,10 +49,12 @@ terraform apply
 terraform output
 ```
 
-### Connect to VM
+### Connect to VM (SSH via IAP)
 ```bash
 gcloud compute ssh px-intern-vm \
   --zone=europe-north1-a \
   --tunnel-through-iap \
   --project=optimal-shard-332612
 ```
+
+

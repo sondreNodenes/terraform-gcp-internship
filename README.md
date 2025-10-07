@@ -18,7 +18,6 @@ This repository contains an **IaC solution** for deploying a secure web server o
 - HTTPS: https://vm.sandbox4.vcops.tech
 - DNS: http://vm.sandbox4.vcops.tech
 
-
 ## Project Structure
 ```bash
 .

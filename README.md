@@ -26,7 +26,6 @@ SSH access is configured to work exclusively through Identity-Aware Proxy (IAP).
 ├── terraform.tfvars
 ├── startup-script.sh
 └── README.md
-
 ```
 
 ## Requirements
@@ -41,8 +40,4 @@ gcloud compute ssh px-intern-vm \
   --zone=europe-north1-a \
   --tunnel-through-iap \
   --project=optimal-shard-332612
-
-
-
-## Project Structure
-- In progress
+```

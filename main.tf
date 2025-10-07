@@ -28,6 +28,9 @@ resource "google_compute_instance" "vm" {
     machine_type = var.machine_type
     zone = var.zone
 
+    allow_stopping_for_update = true
+
+
     # Tag for firewall rules 
     tags = ["intern-assignment"]
 
@@ -36,6 +39,11 @@ resource "google_compute_instance" "vm" {
     }
 
     metadata_startup_script = file("${path.module}/startup-script.sh")
+
+    #service account for VM
+    service_account {
+      scopes = ["cloud-platform"]
+    }
 
     boot_disk{
         initialize_params{
@@ -81,4 +89,13 @@ resource "google_compute_firewall" "allow_iap_ssh" {
   source_ranges = ["35.235.240.0/20"]
   target_tags = ["intern-assignment"]
 }
+
+/*
+resource "google_project_iam_member" "iap_tunnel_user" {
+  project = var.project_id
+  role = "roles/iap.tunnelResourceAccessor" #Assign member this role
+  member = "user:sondrenf@gmail.com"
+}
+
+*/
 

@@ -16,15 +16,16 @@ This repository contains an **IaC solution** for deploying a secure web server o
 
 ## Web Access
 - HTTPS: https://vm.sandbox4.vcops.tech
-- DNS: http://vm.sandbox4.vcops.tech
+- HTTP (redirects to HTTPS): http://vm.sandbox4.vcops.tech
 
 ## Project Structure
 ```bash
 .
+├── .gitignore
+├── .terraform.lock.hcl
 ├── main.tf
 ├── variables.tf
 ├── outputs.tf
-├── terraform.tfvars
 ├── startup-script.sh
 └── README.md
 ```
@@ -34,6 +35,8 @@ This repository contains an **IaC solution** for deploying a secure web server o
 - Terraform >= 1.0
 - IAP API must be enabled in the GCP project
 - User must have IAM role `roles/iap.tunnelResourceAccessor` (managed by project administrators)
+- Create a `terraform.tfvars` file with your GCP project ID:
+
 
 ## Deploy
 ```bash 
@@ -42,7 +45,7 @@ terraform plan
 terraform apply
 ```
 
-## Access info
+## Outputs
 ```bash
 terraform output
 ```
@@ -55,7 +58,3 @@ gcloud compute ssh px-intern-vm \
   --tunnel-through-iap \
   --project=optimal-shard-332612
 ```
-
-
-***Contact***
-sondrenf@gmail.com

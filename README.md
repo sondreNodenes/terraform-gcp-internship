@@ -45,7 +45,7 @@ terraform plan
 terraform apply
 ```
 
-## Access info
+## Outputs
 ```bash
 terraform output
 ```
@@ -58,7 +58,3 @@ gcloud compute ssh px-intern-vm \
   --tunnel-through-iap \
   --project=optimal-shard-332612
 ```
-
-
-***Contact***
-sondrenf@gmail.com
